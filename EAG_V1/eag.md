@@ -286,7 +286,109 @@
 
 ## S3 Introduction to Agentic AI
 
+- `import code` `code.interact(local = locals())` - drop into interactive shell at any point in script
+- `ctrl + D` to exit shell and continue execution 
+- `exit()` exits without execution
+- `locals()`
+- `globals()`
+- `pdb` interactive debugger - pause, inspect, breakpoints, line by line execution, ...
+- `from pdb import set_trace` `set_trace()` - debugger starts here
+  - `h` to list all commands
+  - `n` execute next line without stepping into function
+  - `c` continue until next breakpoint
+  - `l` shows surrounding code
+  - `q` exit trace
+  - `b 12` set breakpoint at  line 12
+  - `cl` clear all breakpoints
 
+
+<br/><br/>
+
+```py
+import asyncio
+import time
+
+async def say_hello():
+  await asyncio.sleep(2) # non-blocking sleep
+  print("Hello Ash")
+
+async def say_good_bye():
+  await asyncio.sleep(1)
+  print("Goodbye World!")
+
+async def main():
+  start = time.time()
+
+  await asyncio.gather(say_hello(), say_good_bye())
+
+  total = time.time() - start
+  print(f'total time {total:.2f}')
+
+asyncio.run(main() )
+```
+
+
+<br/><br/>
+
+- RAG -> Agentic Systems
+- Biggies crushing Agentic Companies
+  - New Agentic Companies
+    - promoting number of tools to integrate
+    - use any models
+  - Biggies strike back
+    - OpenAI - function calling and agents sdk
+    - customizing LLMs to enterprise needs
+    - Anthropic - MCP (protocol that allows any application to become a tool)
+  - knowing the framework -> mcp-based tools
+  - [Blender MCP](https://www.youtube.com/watch?v=oN1LoMz-6VM)
+  - [Cursor talk to Figma MCP](https://github.com/sonnylazuardi/cursor-talk-to-figma-mcp)
+  - [MCP Servers](https://github.com/modelcontextprotocol/servers)
+  - [Awesome MCP Servers](https://github.com/appcypher/awesome-mcp-servers)
+
+
+<br/><br/>
+
+- [Emergent Abilities in LLM](https://arxiv.org/pdf/2206.07682)
+  - capabilities or behaviors that arise in these models as a result of their increased scale
+    - unpredictable
+    - threshold dependent - model size or complexity 
+    - quantitative shihft - significant improvement
+    - generalization
+  - theoretical explanation 
+    - scale 
+    - representation learning
+    - phase transition
+
+
+<br/><br/>
+
+- AI System
+  - LLM - predicts next token
+    - ![](assets/2025-03-25-14-24-56.png)
+  - RAG
+    - ![](assets/2025-03-25-14-27-31.png)
+  - AI Agent - perceive environment, make decisions, and take actions to achieve goals
+    - ![](assets/2025-03-25-14-34-22.png)
+
+- Pillars of Agency | Agent Characteristics
+  - Goal-Directed Behavior
+  - Interactive Capability
+  - Autonomous Decision-Making
+- Core capabilities
+  - ![](assets/2025-03-25-14-38-10.png)
+- reasoning
+  - deductive - drawing logical conclusions from premises
+  - inductive - forming generalizations from specific observations
+  - abductive - making best guesses on incomplete information
+- complex pattern recognition - across knowledge domains
+- implicit knowledge synthesis - drawing conclusions from scattered information
+- meta-cognition - assessing its own reasoning and refining its thought process  
+- memory 
+  - working memory - immediate context and recent interactions
+  - long-term memory - persistance across sessions
+- autonomous action
+  - action space - all possible actions
+  - action selection - evaluating which actions best serve goal
 
 ## S4 Planning and Reasoning with Language Models
 

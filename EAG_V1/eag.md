@@ -192,7 +192,97 @@
  
 ## S2 Modern Language Model Internals
 
+- Neural Networks ~ Universal approximators
+- CNNs - 4 blocks, brains, neural networks
+  - edges and gradients
+  - textures and patterns
+  - part of objects
+  - objects
+- Neural Network -- kind of a map (layer1 to layer2)
+- Loss vs Weights
+- Learning rate
+  - changing eta value over time based on how its learning
+  - loss curves neural networks
+  - Reduce LR On Plateau
+  - ADAM Optimizer
+  - SGD with Momentum
+- Last layer is called head
 
+<br/><br/>
+
+- problems for text by 2016
+  - longer sentences  -- 20 to 30 words | max 100 words
+  - for each problem diff models (translation, summarization, spam detection, ...)
+  - making models larger didn't necessarily mean better models
+  - no large annotated datasets
+- [SAM](https://segment-anything.com/demo)
+  - Segmentation
+- In CNN 
+  - location is inherently available -- where exactly each pixel is
+  - divided our problem into multiple sub-problems 
+- Skip Connections in Residual Networks -- Highway networks
+- Kernel Visualization
+- 3 things
+  - location knowledge made CNNs work (We use position encoding in place of this in transformer)
+  - Channels allowed to segregate concepts (We use multi-head in place of this in transformer)
+  - Skip connections allowed for deeper models (no need to worry about chain rule slope/gradient calculation)
+- Densenet Architecture
+- ViT - Vision Transformer
+- Full Transformer - Encoder and Decoder
+- [LLM Visualization](https://bbycroft.net/llm) 
+- Bigger dimensions -- bigger models (no limit, money is the limit)
+
+
+<br/><br/>
+
+- characters -- LLM runs len(string) times
+- words -- LLM runs wc(string) + 1 times
+- tokens -- Byte Pair Encoding
+
+
+<br/><br/>
+
+- Tokenizer -- companies tending to keep the science secret -- how they arrived at the numbers/tokens
+  - Each token has embedding
+    - each embedding has multiple dimensions
+- LLMs - Generative AI - GenAI
+- Masking vs Inferencing
+  - Masking - hiding the future words when predicting next word during training
+  - Inferencing - prediction (no backpropagation to change weights)
+- Pre-training objectives of LLMs
+  - Casual Language Modeling (CLM) -- next token prediction
+- Ollama Gemma
+- ![](assets/2025-03-18-14-16-07.png)
+  - 1/50 -- overall, of all the languages combined, there are 50 words that can mean the same thing?
+- Chinchilla Law 
+
+
+<br/><br/>
+
+- Fine tuning
+- pre-trained models are usually trained to predict next words, but not solve the prompt 
+- supervised fine-tuning SFT --- instruction-tuning
+  - input instruction
+  - ideal response
+- QLoRA - Quantized Low-Ranked Adaptation of Language Models
+- Chain of Thought
+- ...
+  - pre-training
+  - post-training
+- without finetuning, it continues to add to prompt, not answer the prompt
+- RAG is not training
+  - it is like a small internet search for the model 
+- AWS Lambda Services for Scraping Linkedin
+  - computer given to you for 2.5 minutes
+  - every time lambda opens up, it has different ip address
+  - launch million of them, run millions of times
+
+
+<br/><br/>
+
+- to-do:
+  - Leslie Smith - Learning Rate
+  - One Cycle Policy
 
 ## S3 Introduction to Agentic AI
 
